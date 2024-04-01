@@ -66,7 +66,8 @@ func renderRacePosition(
 		return
 	}
 
-	current.Clone(board[line][col])
+	current.Name = board[line][col].Name
+	current.Line = board[line][col].Line
 
 	if winner != nil && current.Name == winner.Name {
 		removeChars(buffer, col+1)
